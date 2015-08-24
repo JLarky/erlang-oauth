@@ -185,8 +185,8 @@ params_encode(Params) ->
 params_decode(_Response={{_, _, _}, _, Body}) ->
   uri_params_decode(Body).
 
-http_request(Method, Request, Options) ->
-  httpc:request(Method, Request, [{autoredirect, false}], Options).
+http_request(_Method, Request, _Options) ->
+  Request.
 
 -define(unix_epoch, 62167219200).
 
